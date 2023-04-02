@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>尝试写PGP加密网页</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <img src="logo.svg" class="logo" alt="">
+
+  <div class="login-app">
+    <!-- 选择加密服务 -->
+    <div class="login-header" onclick="checkRadio()">
+      <input type="radio" name="login-opt" id="message" checked="checked">
+      <label for="message" class="m-btn">内容加密</label>
+      <input type="radio" name="login-opt" id="username">
+      <label for="username" class="u-btn">获得数字签名</label>
+      <input type="radio" name="login-opt" id="qrcode">
+     <!--<label for="qrcode" class="q-btn">这个不显示</label>-->
+    </div>
+    <!-- 输入部分 -->
+    <div class="login-body">
+      <div id="form-bar">
+        <!-- <form-append></form-append> -->
+        <!-- 文件读取表单 -->
+        <form action="" class="m-form">
+          <input type="text" placeholder="请输入公钥K">
+          <input type="text" placeholder="请输入加密文件地址"><button class="vercode-btn">获取地址</button>
+          <input type="checkbox" name="" id="sure">
+          <label for="sure" class="tobesure"><p>基于后量子密码算法Kyber的邮件加密PGP，我已阅读并同意<a href="">服务协议</a>和<a href="">隐私权条款</a></p></label>
+          <button class="login-btn">加密</button>
+        </form>
+        <!-- 签名获取部分 -->
+        <form action="" class="u-form">
+          <input type="text" placeholder="请输入用户ID">
+          <input type="text" placeholder="请输入公钥">
+          <input type="text" placeholder="请输入加密文件地址"><button class="vercode-btn">获取地址</button>
+          <button class="login-btn">加密</button>
+        </form>
+        <!-- 扫码表单 -->
+        <form action="" class="q-form">
+          <div class="qrcode">
+            <img src="qrcode.png" alt="">
+          </div>
+        </form>
+        <!-- <form-append></form-append> -->
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
